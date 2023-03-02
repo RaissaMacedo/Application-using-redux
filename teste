@@ -1,0 +1,12 @@
+//se tiver alguma viagem repetindo id
+        const tripIndex = draft.findIndex((trip) => trip.id === action.trip.id);
+
+        if (tripIndex >= 0) {
+          //localizando a viageme adicionando as que forem repetidas
+          draft[tripIndex].amount += 1;
+        } else {
+          draft.push({
+            ...action.trip,
+            amount: 1,
+          });
+        }
